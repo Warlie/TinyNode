@@ -15,10 +15,12 @@ class Evocation {
 		Vector<AbstractStreamStructurePanel<VCard>> line = new Vector<AbstractStreamStructurePanel<VCard>>();
 		
 		line.add(new tinyNode.graphics.VCNStreamPanel());
+		line.add(new tinyNode.graphics.VCGenderStreamPanel());
 		
 		tinyNode.graphics.AutoFrameGraphic<VCard> summon = new tinyNode.graphics.AutoFrameGraphic<VCard>(line, connection);
 	
 		summon.setLocationRelativeTo(null);
+		summon.pack();
 		summon.setVisible(true);
 		
 	}

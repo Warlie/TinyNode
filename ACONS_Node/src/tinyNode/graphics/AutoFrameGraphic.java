@@ -2,10 +2,14 @@ package tinyNode.graphics;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.FlowLayout;
 import java.awt.AlphaComposite;
+
+import javax.swing.BoxLayout;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import java.util.*;
@@ -27,8 +31,19 @@ public class AutoFrameGraphic<T> extends JFrame implements StreamLine<T>
 	
 	public AutoFrameGraphic(Vector<AbstractStreamStructurePanel<T>> ssp, ComNode connection)
 	{
+		BoxLayout boxLayout = new BoxLayout(this.getContentPane(), BoxLayout.Y_AXIS); // top to bottom
+		this.setLayout(boxLayout);
+		//JPanel Container panel = this.getContentPane();
+		//this.setLayout(new FlowLayout());
+		//this.setLayout(new GridBagLayout());
+
+        //panel.setAlignmentX(Component.LEFT_ALIGNMENT);
+        //panel.setAlignmentY(Component.TOP_ALIGNMENT);
+        //BoxLayout layout = new BoxLayout(panel, BoxLayout.PAGE_AXIS);
+        //panel.setLayout(layout);
+
+
 		
-		this.setLayout(new FlowLayout());
 		AbstractStreamStructurePanel<T> help = null;
 		panelField = ssp;
 		
