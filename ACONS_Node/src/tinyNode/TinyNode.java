@@ -53,6 +53,8 @@ public class TinyNode  extends Thread implements MouseListener {
 	
 	public ComNode getComNode(){return cn;}
 	
+
+	
 	/**
 	 * Creates an anonymous Object, connected to ComNode to handle 
 	 * various streams with one ComNode object.
@@ -198,6 +200,20 @@ public class TinyNode  extends Thread implements MouseListener {
 		public void mouseReleased(MouseEvent e) {
 			// TODO Auto-generated method stub
 			
+
+			
+		}
+		
+		public void interruptSpell()
+		{
+			evo.interruptSpell();
+			master.setVisible(true);
+		}
+		
+		public void castSpell()
+		{
+			System.out.println("i can not cast it now!");
+			//master.setVisible(true);
 		}
 		
 	/**

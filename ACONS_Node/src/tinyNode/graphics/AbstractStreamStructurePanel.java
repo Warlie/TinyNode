@@ -20,7 +20,10 @@ public abstract class AbstractStreamStructurePanel<T> extends JPanel implements 
 	private static final long serialVersionUID = 7461273589358133436L;
 	private StreamLine<T> antecessor;
 	private StreamLine<T> successor;
+	protected AutoFrameGraphic<T> afg;
 	
+	
+	protected void setAutoFrame(AutoFrameGraphic<T> frame){ this.afg = frame;}
 	
 	public boolean computeStream(Stream<T> stream) {
 		// TODO Auto-generated method stub

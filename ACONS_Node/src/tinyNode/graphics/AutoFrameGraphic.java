@@ -16,13 +16,14 @@ import java.util.*;
 import java.util.stream.Stream;
 import tinyNode.connection.*;
 
-public class AutoFrameGraphic<T> extends JFrame implements StreamLine<T>
+public class AutoFrameGraphic<T> extends JFrame implements StreamLine<T>, Castable
 {
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 6736547436156460381L;
 	private Vector<AbstractStreamStructurePanel<T>> panelField;
+	private ComNode con;
 	private AbstractStreamStructurePanel<T> start;
 	private AbstractStreamStructurePanel<T> stop;
 	private StreamLine<T> antecessor;
@@ -31,6 +32,7 @@ public class AutoFrameGraphic<T> extends JFrame implements StreamLine<T>
 	
 	public AutoFrameGraphic(Vector<AbstractStreamStructurePanel<T>> ssp, ComNode connection)
 	{
+		con = connection;
 		BoxLayout boxLayout = new BoxLayout(this.getContentPane(), BoxLayout.Y_AXIS); // top to bottom
 		this.setLayout(boxLayout);
 		//JPanel Container panel = this.getContentPane();
@@ -55,9 +57,12 @@ public class AutoFrameGraphic<T> extends JFrame implements StreamLine<T>
 		
 		for ( Iterator<AbstractStreamStructurePanel<T>> it = ssp.iterator(); it.hasNext(); )
 			  {
-				this.add( it.next() );
+				
+				help = it.next();
+				help.setAutoFrame(this);
+				this.add( help );
 				//it.next().addAntecessor(help);
-				//help = it.next();
+				
 			  }
 
 		
@@ -87,6 +92,19 @@ public class AutoFrameGraphic<T> extends JFrame implements StreamLine<T>
 	public boolean computeStream(Stream<T> stream) {
 		// TODO Auto-generated method stub
 		return false;
+	}
+
+
+	public void castSpell() 
+	{
+
+	}
+
+
+	public void interruptSpell() 
+	{
+		this.dispose();
+		
 	}
 	
 

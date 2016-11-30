@@ -63,15 +63,14 @@ public class ComNode {
 
 	/**
 	 * 
-	 * @param vc
+	 * @param pc
 	 * @return
 	 */
 	
 	public boolean storeVC(List<VCard> vc)
 	{
 		return false;
-	}
-
+	}	
 	
 	/**
 	 * 

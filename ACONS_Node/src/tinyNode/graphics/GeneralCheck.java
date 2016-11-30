@@ -1,9 +1,18 @@
 package tinyNode.graphics;
 
-import javax.swing.JPanel;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+//import javax.swing.JPanel;
+import javax.swing.JFrame;
 
-public class GeneralCheck extends JPanel {
+import tinyNode.data.vCard.VCard;
 
+import javax.swing.JButton;
+
+public class GeneralCheck extends AbstractStreamStructurePanel<VCard> implements ActionListener  {
+
+	JButton btnFertig;
+	JButton btnAbbrechen;	
 	/**
 	 * 
 	 */
@@ -13,7 +22,26 @@ public class GeneralCheck extends JPanel {
 	 * Create the panel.
 	 */
 	public GeneralCheck() {
+		
+		btnFertig = new JButton("Fertig");
+		btnFertig.addActionListener(this);
+		add(btnFertig);
+		
+		btnAbbrechen = new JButton("Abbrechen");
+		btnAbbrechen.addActionListener(this);
+		add(btnAbbrechen);
 
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent ae) {
+		// TODO Auto-generated method stub
+        if(ae.getSource() == this.btnFertig){
+            System.out.println(("Button 1 wurde betätigt"));
+        }
+        else if(ae.getSource() == this.btnAbbrechen){
+        	tinyNode.TinyNode.SINGLETON.interruptSpell();
+        }
 	}
 
 }
