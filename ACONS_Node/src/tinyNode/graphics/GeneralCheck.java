@@ -21,6 +21,13 @@ public class GeneralCheck extends AbstractStreamStructurePanel<VCard> implements
 	/**
 	 * Create the panel.
 	 */
+	
+	public GeneralCheck(StreamLine<VCard> sl)
+	{
+		this();
+		this.addAntecessor(sl);
+	}
+	
 	public GeneralCheck() {
 		
 		btnFertig = new JButton("Fertig");

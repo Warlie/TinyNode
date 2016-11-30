@@ -61,7 +61,7 @@ public class TinyNode  extends Thread implements MouseListener {
 	 * 
 	 * @return generic StreamLine object
 	 */
-	public static <T> StreamLine<T> createFinalElement()
+	public static <T> StreamLine<T> createFirstElement()
 	{
 		StreamLine<T> out = new StreamLine<T>()
 				{

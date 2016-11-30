@@ -24,6 +24,12 @@ public class VCGenderStreamPanel extends AbstractStreamStructurePanel<VCard> {
 	 */
 	private static final long serialVersionUID = 6828695097608071647L;
 
+	public VCGenderStreamPanel(StreamLine<VCard> sl)
+	{
+		this();
+		this.addAntecessor(sl);
+	}
+	
 	public VCGenderStreamPanel()
 	{
 

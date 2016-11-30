@@ -46,7 +46,9 @@ public class AutoFrameGraphic<T> extends JFrame implements StreamLine<T>, Castab
 
 
 		
-		AbstractStreamStructurePanel<T> help = null;
+		AbstractStreamStructurePanel<T> help1 = null;
+		AbstractStreamStructurePanel<T> help2 = null;
+		boolean notFirst = false;
 		panelField = ssp;
 		
 		//setBackground(new Color(1.0f,1.0f,1.0f,0.5f));
@@ -57,10 +59,19 @@ public class AutoFrameGraphic<T> extends JFrame implements StreamLine<T>, Castab
 		
 		for ( Iterator<AbstractStreamStructurePanel<T>> it = ssp.iterator(); it.hasNext(); )
 			  {
+
 				
-				help = it.next();
-				help.setAutoFrame(this);
-				this.add( help );
+				if(help1 != null)
+				{
+					help2 = help1;
+				}
+
+					help1 = it.next();
+					this.add( help1 );	
+					help1.setAutoFrame(this);
+					
+					if(help2 != null)help2.addAntecessor(help1);
+				
 				//it.next().addAntecessor(help);
 				
 			  }

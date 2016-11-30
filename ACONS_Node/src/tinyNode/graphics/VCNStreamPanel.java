@@ -24,6 +24,12 @@ public class VCNStreamPanel extends AbstractStreamStructurePanel<VCard> {
 	 */
 	private static final long serialVersionUID = 6828695097608071647L;
 
+	public VCNStreamPanel(StreamLine<VCard> sl)
+	{
+		this();
+		this.addAntecessor(sl);
+	}
+	
 	public VCNStreamPanel()
 	{
 		  //this.add(new JLabel("Ihr habt gerufen, Meister"));
