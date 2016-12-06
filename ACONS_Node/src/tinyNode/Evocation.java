@@ -15,8 +15,7 @@ class Evocation {
 		
 		Vector<AbstractStreamStructurePanel<VCard>> line = new Vector<AbstractStreamStructurePanel<VCard>>();
 		
-
-		line.add(new tinyNode.graphics.VCNStreamPanel(tinyNode.TinyNode.createFirstElement()));
+		line.add(new tinyNode.graphics.VCNStreamPanel(tinyNode.TinyNode.<VCard>createFirstElement()));
 		line.add(new tinyNode.graphics.VCGenderStreamPanel());
 		line.add(new tinyNode.graphics.GeneralCheck());
 		

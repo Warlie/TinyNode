@@ -85,6 +85,15 @@ public class TinyNode  extends Thread implements MouseListener {
 						
 						return false;
 					}
+
+					@SuppressWarnings("unchecked")
+					public Stream<T> getStream() {
+						// TODO Auto-generated method stub
+						List<T> list = (List<T>) ComNode.getFilterVCard();
+						
+						return list.stream();
+						
+					}
 			
 				};
 

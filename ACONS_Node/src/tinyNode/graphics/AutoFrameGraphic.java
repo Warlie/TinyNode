@@ -75,8 +75,8 @@ public class AutoFrameGraphic<T> extends JFrame implements StreamLine<T>, Castab
 				//it.next().addAntecessor(help);
 				
 			  }
-
-		
+System.out.println(stop.getClass().getName());
+		System.out.println(stop.getStream().count());
 	}
 
 	public void addAntecessor(AbstractStreamStructurePanel<T> ante)
@@ -105,7 +105,11 @@ public class AutoFrameGraphic<T> extends JFrame implements StreamLine<T>, Castab
 		return false;
 	}
 
-
+	public Stream<T> getStream() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
 	public void castSpell() 
 	{
 
@@ -117,6 +121,9 @@ public class AutoFrameGraphic<T> extends JFrame implements StreamLine<T>, Castab
 		this.dispose();
 		
 	}
+
+
+
 	
 
 

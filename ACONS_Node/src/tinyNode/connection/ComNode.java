@@ -27,15 +27,20 @@ public class ComNode {
 	 * @param cc
 	 */
 
-	public static Vector<VCard> getFilterVCard()
+	public static List<VCard> getFilterVCard()
 	{
+		/*
 		VCard vc = new VCard();
 		Vector<VCard> vvc = new Vector<VCard>();
 		vvc.add(vc);
+		*/
+		List<VCard> list = new ArrayList<VCard>();
+		list.add(new VCard());
+
+		//stream = list.stream();
 		
 		
-		
-		return vvc;
+		return list;
 	}
 	
 

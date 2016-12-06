@@ -20,6 +20,7 @@ public abstract class AbstractStreamStructurePanel<T> extends JPanel implements 
 	private static final long serialVersionUID = 7461273589358133436L;
 	private StreamLine<T> antecessor;
 	private StreamLine<T> successor;
+	protected Stream<T> stream;
 	protected AutoFrameGraphic<T> afg;
 	
 	
@@ -29,6 +30,22 @@ public abstract class AbstractStreamStructurePanel<T> extends JPanel implements 
 		// TODO Auto-generated method stub
 		return false;
 	}	
+	
+
+	public Stream<T> getStream() {
+		
+		System.out.println(this.getClass().getName());
+		
+		if(this.antecessor != null)
+			stream = this.antecessor.getStream();
+		else
+		{
+			System.out.println(this.getClass().getName() + " has no antecessor");
+			stream = null;
+		}
+		
+		return stream;
+	}
 	
 	
 	public void addAntecessor(StreamLine<T> ante)
