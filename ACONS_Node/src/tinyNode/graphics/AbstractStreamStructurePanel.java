@@ -7,6 +7,8 @@ import java.util.stream.Stream;
 
 import javax.swing.*;
 
+import tinyNode.connection.BrokenStreamException;
+
 
 /**
  * @author warlie
@@ -32,7 +34,7 @@ public abstract class AbstractStreamStructurePanel<T> extends JPanel implements 
 	}	
 	
 
-	public Stream<T> getStream() {
+	public Stream<T> getStream() throws BrokenStreamException {
 		
 		System.out.println(this.getClass().getName());
 		
@@ -42,6 +44,7 @@ public abstract class AbstractStreamStructurePanel<T> extends JPanel implements 
 		{
 			System.out.println(this.getClass().getName() + " has no antecessor");
 			stream = null;
+			throw new BrokenStreamException();
 		}
 		
 		return stream;

@@ -76,7 +76,12 @@ public class AutoFrameGraphic<T> extends JFrame implements StreamLine<T>, Castab
 				
 			  }
 System.out.println(stop.getClass().getName());
+	try
+	{	
 		System.out.println(stop.getStream().count());
+	}
+	catch(BrokenStreamException e)
+	{}
 	}
 
 	public void addAntecessor(AbstractStreamStructurePanel<T> ante)
