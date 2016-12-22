@@ -71,7 +71,8 @@ public class AutoFrameGraphic<T> extends JFrame implements StreamLine<T>, Castab
 					help1.setAutoFrame(this);
 					
 					if(help2 != null)help2.addAntecessor(help1);
-				
+					System.out.println(help1.getClass().getName() + " -1- ");
+					if(help2 != null)System.out.println(help2.getClass().getName() + " -2- ");
 				//it.next().addAntecessor(help);
 				
 			  }

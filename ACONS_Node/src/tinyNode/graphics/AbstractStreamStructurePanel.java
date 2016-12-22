@@ -53,16 +53,19 @@ public abstract class AbstractStreamStructurePanel<T> extends JPanel implements 
 	
 	public void addAntecessor(StreamLine<T> ante)
 	{
+		System.out.println(this.getClass().getName() + " has antecessor (" + ante.getClass().getName() + ")[1]" );
 		this.antecessor = ante;
 	}
 	
 	public void addAntecessor(AbstractStreamStructurePanel<T> ante)
 	{
+		System.out.println(this.getClass().getName() + " has antecessor (" + ante.getClass().getName() + ")[2]" );
 		this.antecessor = ante;
 	}
 	
 	public void addAntecessor(AutoFrameGraphic<T> ante)
 	{
+		System.out.println(this.getClass().getName() + " has antecessor (" + ante.getClass().getName() + ")[3]" );
 		this.antecessor = ante;	
 	}
 	
